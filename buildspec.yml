@@ -6,8 +6,6 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - apt-get install snap -y
-      - snap install --classic kotlin
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
