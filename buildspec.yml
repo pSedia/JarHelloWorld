@@ -1,0 +1,19 @@
+version: '2'
+
+
+phases:
+	install:
+		runtime-version:
+			openjdk: 8
+		command:
+			- echo "installing iniziale"
+	pre_build:
+		commands:
+			- echo "Questa è la buil phase"
+	build:
+		commands:
+			- echo "siamo nella build block"
+	post_build:
+		commands:
+			- echo "siamo nella post build"
+		
