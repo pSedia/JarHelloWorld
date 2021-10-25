@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       java: corretto11
-      kotlin: latest
   pre_build:
     commands:
+      - snap install --classic kotlin
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
