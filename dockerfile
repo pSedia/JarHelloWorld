@@ -1,6 +1,7 @@
 #base image
 FROM ubuntu
 RUN apt-get update && apt-get upgrade -y
+RUN apt-get install openjdk-8-jdk -y -4
 RUN apt-get install git -y
 
 
