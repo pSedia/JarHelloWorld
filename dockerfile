@@ -1,9 +1,5 @@
 #base image
-FROM ubuntu
-RUN apt-get update && apt-get upgrade -y
 RUN apt-get install openjdk-8-jdk -y
-RUN apt-get install git -y
-
 
 ARG KOTLIN_VERSION=1.3.72
 
@@ -22,7 +18,6 @@ RUN cd /opt \
 
 # Add its directory to $PATH
 ENV PATH=/opt/kotlinc/bin:$PATH
-
 
 COPY ./helloworld.sh /
 RUN chmod +x /helloworld.sh
