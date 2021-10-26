@@ -1,4 +1,5 @@
 #base image
+RUN apt-get install git -y
 
 ARG KOTLIN_VERSION=1.3.72
 
