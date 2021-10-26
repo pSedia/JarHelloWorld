@@ -1,5 +1,6 @@
 #base image
 RUN apt-get install git -y
+RUN apt-get install openjdk-8-jdk -y
 
 ARG KOTLIN_VERSION=1.3.72
 
