@@ -17,6 +17,7 @@ phases:
   post_build:
     commands:
       - echo "tutto apposto"
+      - docker run helloworld_build echo "sono in run"
       
       
 artifacts:
