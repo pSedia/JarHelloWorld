@@ -11,13 +11,13 @@ phases:
   build:
     commands:
       - docker images
-      - docker run helloworld_build echo "Hello!!! GIooo"
+      - docker run helloworld_build
       - docker save -o helloworld_build.tar helloworld_build
 
   post_build:
     commands:
-      - echo "tutto apposto"
-      - docker run helloworld_build echo "sono in run"
+      - echo "Sono in Post Build"
+      - docker run helloworld_build echo "sono in run in post build"
       
       
 artifacts:
