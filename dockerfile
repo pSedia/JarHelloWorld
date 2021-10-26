@@ -2,7 +2,7 @@
 FROM ubuntu
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install git -y
-RUN apt-get install openjdk-8-jdk -y
+
 
 ARG KOTLIN_VERSION=1.3.72
 ENV DEBIAN_FRONTEND=noninteractive
