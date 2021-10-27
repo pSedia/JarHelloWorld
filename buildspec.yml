@@ -8,11 +8,11 @@ phases:
   pre_build:
     commands:
       - docker build -t helloworld_build .
-  build:
-    commands:
-      - docker images
-      - docker run helloworld_build
-      - docker save -o helloworld_build.tar helloworld_build
+  #build:
+    #commands:
+      #- docker images
+      #- docker run helloworld_build
+      #- docker save -o helloworld_build.tar helloworld_build
 
   post_build:
     commands:
@@ -22,5 +22,5 @@ phases:
       
 artifacts:
   files:
-    - '**/*'
+    - '**/*.tar'
       
