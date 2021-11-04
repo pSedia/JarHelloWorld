@@ -7,7 +7,6 @@ phases:
       
   pre_build:
     commands:
-      - docker info
       - docker build -t helloworld_build .
   build:
     commands:
