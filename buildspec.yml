@@ -7,15 +7,21 @@ phases:
       
   pre_build:
     commands:
+      - pwd
+      - ls -a
       - docker build -t helloworld_build .
   build:
     commands:
+      - pwd
+      - ls -a
       - docker images
       - docker run helloworld_build
       - docker save -o helloworld_build.tar helloworld_build
 
   post_build:
     commands:
+      - pwd
+      - ls -a
       - echo "Sono in Post Build"
       - docker run helloworld_build echo "sono in run in post build"
       
