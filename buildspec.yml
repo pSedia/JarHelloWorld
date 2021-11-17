@@ -10,6 +10,8 @@ phases:
       - pwd
       - ls -a
       - docker build -t helloworld_build .
+      - ls /efs
+      
   build:
     commands:
       - pwd
@@ -17,6 +19,7 @@ phases:
       - docker images
       - docker run helloworld_build
       - docker save -o helloworld_build.tar helloworld_build
+      - echo "hello" > /efs/test.txt
 
   post_build:
     commands:
@@ -24,9 +27,9 @@ phases:
       - ls -a
       - echo "Sono in Post Build"
       - docker run helloworld_build echo "sono in run in post build"
-      
+      - ls /efs
       
 artifacts:
   files:
-    - '**/*.tar'
+    #- '**/*.tar'
       
