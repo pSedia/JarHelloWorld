@@ -8,7 +8,6 @@ phases:
   pre_build:
     commands:
       - pwd
-      - ls -a
       - docker build -t helloworld_build .
       - ls /efs
       
@@ -18,8 +17,9 @@ phases:
       - ls -a
       - docker images
       - docker run helloworld_build
+      - cd /efs
       - docker save -o helloworld_build.tar helloworld_build
-      - echo "hello" > /efs/test.txt
+      - echo "hello" > /efs/CIAONEE.txt
 
   post_build:
     commands:
@@ -28,6 +28,7 @@ phases:
       - echo "Sono in Post Build"
       - docker run helloworld_build echo "sono in run in post build"
       - ls /efs
+      - ls /efs-mount-point
       
 artifacts:
   files:
