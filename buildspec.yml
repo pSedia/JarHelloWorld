@@ -17,18 +17,19 @@ phases:
       - ls -a
       - docker images
       - docker run helloworld_build
-      - cd /efs
+      - cd /efs/
       - docker save -o helloworld_build.tar helloworld_build
-      - echo "hello" > /efs/CIAONEE.txt
+      - cd /efs/prova
+      - docker save -o helloworld_build.tar helloworld_build
 
   post_build:
     commands:
       - pwd
       - ls -a
       - echo "Sono in Post Build"
-      - docker run helloworld_build echo "sono in run in post build"
       - ls /efs
       - ls /efs-mount-point
+      - ls /efs/prova
       
 artifacts:
   files:
