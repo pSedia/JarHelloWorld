@@ -8,19 +8,19 @@ phases:
   pre_build:
     commands:
       - pwd
-      - docker build -t helloworld_build .
+    #  - docker build -t helloworld_build .
       - ls /efs
       
   build:
     commands:
       - pwd
-      - ls -a
-      - docker images
-      - docker run helloworld_build
-      - cd /efs/
-      - docker save -o helloworld_build.tar helloworld_build
-      - cd /efs/prova
-      - docker save -o helloworld_build.tar helloworld_build
+      - ls /efs
+    #  - docker images
+     # - docker run helloworld_build
+     # - cd /efs/
+      #- docker save -o helloworld_build.tar helloworld_build
+      #- cd /efs/prova
+      #- docker save -o helloworld_build.tar helloworld_build
 
   post_build:
     commands:
